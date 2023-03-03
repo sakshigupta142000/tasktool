@@ -1,0 +1,9 @@
+.container{
+    text-align: center;
+    margin-top: 30px;
+
+}
+.mat-toolbar.mat-primary{
+    background: #a224ad;
+    color: #fff;
+}

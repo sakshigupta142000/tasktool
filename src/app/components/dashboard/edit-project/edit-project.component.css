@@ -1,0 +1,17 @@
+form{
+    background-color: rgb(225, 199, 244);
+    margin-top:2%;
+    padding-right:5%;
+}
+.example-form-field {
+    margin-right: 20px;
+  }
+
+#submitbutton{
+    background-color:  #894cac;
+}
+.edittaskheading{
+    margin-left: 38%;
+    margin-top:1.5%;
+}
+body{background: rgb(185, 163, 200)}.date{font-size: 11px}.comment-text{font-size: 12px}.fs-12{font-size: 12px}.shadow-none{box-shadow: none}.name{color: #007bff}.cursor:hover{color: blue}.cursor{cursor: pointer}.textarea{resize: none}

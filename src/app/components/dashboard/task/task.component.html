@@ -1,0 +1,78 @@
+<div class="one">
+  <div class="containers">
+      <h1 style="text-align: center; font-family: Raleway, sans-serif;"> TASK DETAILS </h1> <br> </div>
+      <div class="first">
+          <button mat-raised-button color="primary" routerLink="/home/add-task">Add New Task</button>
+      <div class="example-header">
+  
+        <mat-form-field style="text-align: left; padding-left: 80%; height: 1%;">
+          <input matInput (keyup)="applyFilter($event)"  placeholder="Filter" >
+        </mat-form-field>
+     
+        
+      <mat-table #table [dataSource]="dataSource">
+    
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <mat-header-cell *matHeaderCellDef>TaskId</mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+          <mat-cell *matCellDef="let element" routerLink="/home/edit-task" style="cursor: pointer; color: rgb(160, 115, 202);"> {{element.name}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="projectname">
+          <mat-header-cell *matHeaderCellDef>Project Name</mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.projectname}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="desc">
+          <mat-header-cell *matHeaderCellDef>Description </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.desc}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="startdate">
+          <mat-header-cell *matHeaderCellDef>Start Date </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.startdate}} </mat-cell>
+
+        </ng-container>
+
+        <ng-container matColumnDef="duedate">
+          <mat-header-cell *matHeaderCellDef> Due Date </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.duedate}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="taskstatus">
+          <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.taskstatus}} </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="Assigned_To">
+          <mat-header-cell *matHeaderCellDef> Assigned To </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.Assigned_To}} </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="created_By">
+          <mat-header-cell *matHeaderCellDef> Created By </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.created_By}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="created_on">
+          <mat-header-cell *matHeaderCellDef> Created On </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.created_on}} </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="task_category">
+          <mat-header-cell *matHeaderCellDef routerLink="/home/add-taskcategory"> Task Category </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.task_category}} </mat-cell>
+        </ng-container>
+  
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    
+    </div>
+    
+    </div>

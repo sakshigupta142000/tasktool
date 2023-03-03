@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  </head>
+  <body>
+<form class="row g-3">
+    <div class="col-md-6">
+      <label for="inputtitle" class="form-label">Title</label>
+      <input type="text" class="form-control" id="inputtitle"  placeholder="Title of task">
+    </div>
+    <div class="col-md-6">
+        <label for="inputproject" class="form-label">Project</label>
+        <input type="text" class="form-control" id="inputproject"  placeholder="Project name">
+    </div>
+    <div class="col-12">
+      <label for="inputdescription" class="form-label">Description</label>
+      <input type="text" class="form-control" id="inputdescription" placeholder="Task Description">
+    </div>
+    <div class="col-md-6">
+      <label for="inputtaskcategory" class="form-label">Task Category</label>
+      <select id="inputtaskcategory" class="form-select">
+        <option selected>Developer</option>
+        <option>Tester</option>
+        <option>Analyst</option>
+      </select>
+  </div>
+    <div class="col-md-6">
+        <label for="inputsdate" class="form-label">Start date</label>
+        <input type="date" class="form-control" id="inputsdate">
+      </div>
+
+      <div class="col-md-6">
+        <label for="inputddate" class="form-label">Due date</label>
+        <input type="date" class="form-control" id="inputddate">
+      </div>
+
+  
+    
+    <div class="col-md-6">
+        <label for="inputassignedto" class="form-label">Assigned to</label>
+        <select id="inputassignedto" class="form-select">
+          <option selected>Sakshi</option>
+          <option>Akarsh</option>
+          <option>Lalu</option>
+        </select>
+    </div>
+    <div class="col-md-4">
+      <label for="inputStatus" class="form-label">Status</label>
+      <select id="inputStatus" class="form-select">
+        <option selected>Active</option>
+        <option>Closed</option>
+        <option>On hold</option>
+      </select>
+    </div>
+    <!-- <div class="col-md-2">
+      <label for="inputZip" class="form-label">sakshi</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div> -->
+   
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary" id="submitbutton" routerLink="/home/task">Submit</button>
+    </div>
+  </form>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+  </body>
+</html> 
+
+
+
+ <!-- <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          Check me out
+        </label>
+      </div>
+    </div> -->

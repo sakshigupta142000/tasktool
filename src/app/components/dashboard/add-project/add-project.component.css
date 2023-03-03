@@ -1,0 +1,18 @@
+form{
+    background-color: rgb(225, 199, 244);
+    margin-top:5%;
+    padding-right: 40px;
+}
+.example-form-field {
+    margin-right: 20px;
+  }
+
+#submitbutton{
+    background-color:  #894cac;
+}
+/* #inputproject{
+    margin-left: 50%;
+} */
+.container {
+    min-width: 2000px;
+}

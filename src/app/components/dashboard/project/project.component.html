@@ -1,0 +1,43 @@
+<div class="one">
+    <div class="containers">
+        <h1 style="text-align: center; font-family: Raleway, sans-serif;"> PROJECT DETAILS </h1> <br> </div>
+        <div class="first">
+            <button mat-raised-button color="primary" routerLink="/home/add-project">Create New Project</button>
+        <div class="example-header">
+    
+          <mat-form-field style="text-align: left; padding-left: 80%; height: 1%;">
+            <input matInput (keyup)="applyFilter($event)"  placeholder="Filter" >
+          </mat-form-field>
+       
+          
+        <mat-table #table [dataSource]="dataSource">
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+            <mat-header-cell *matHeaderCellDef>ProjectId</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+          </ng-container>
+      
+          <ng-container matColumnDef="projectname">
+            <mat-header-cell *matHeaderCellDef>Project Name</mat-header-cell>
+            <mat-cell *matCellDef="let element" routerLink="/home/edit-project" style="cursor: pointer; color: rgb(160, 115, 202);"> {{element.projectname}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="taskstatus">
+            <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.taskstatus}} </mat-cell>
+          </ng-container>
+    
+          <ng-container matColumnDef="Assigned_To">
+            <mat-header-cell *matHeaderCellDef> Assigned To </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.Assigned_To}} </mat-cell>
+          </ng-container>
+    
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      
+      </div>
+      
+      </div>
+  

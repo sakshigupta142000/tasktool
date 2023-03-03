@@ -1,0 +1,49 @@
+mat-sidenav{
+    background-color: rgb(142, 52, 169);
+    width: 230px;
+    height:100%;
+
+}
+mat-sidenav-content{
+    height: 100vh;
+    background-color: rgb(225, 199, 244);
+}
+.mat-sidenav-content  .main{
+    margin-left: 30px;
+}
+.mat-toolbar .mat-icon{
+    margin-left: 15px;
+    color:gray;
+}
+mat-toolbar{
+    justify-content: space-between;
+}
+.mat-toolbar .box{
+    margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+/* .container{
+    text-align: center;
+    margin-top: 30px;
+
+}
+.mat-toolbar.mat-primary{
+    background: #a224ad;
+    color: #fff;
+}
+.mat-icon{
+    color:rgb(179, 130, 186);
+}
+.logouticon{
+    display: flex;
+    margin-left: auto;
+    color:#bb36fd;
+} */
