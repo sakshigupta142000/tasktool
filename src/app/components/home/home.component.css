@@ -21,7 +21,10 @@ mat-toolbar{
 .mat-toolbar .box{
     margin-top: 15px;
 }
-
+#logout-button{
+    margin-right: 35px;
+    color: #8f1cd6;
+}
 
 
 

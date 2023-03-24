@@ -21,18 +21,20 @@ export class LoginComponent implements OnInit {
 
   onSubmit()
   {
-    // console.log("form is submitted");
+    console.log("form is submitted");
     if((this.credentials.username!='' && this.credentials.password!='') && (this.credentials.username!=null && this.credentials.password!=null)){
 
       console.log("We have to submit the form to server");
       this.loginService.generateToken(this.credentials).subscribe(
-        response=>{
+        (response:any)=>{
 
-          console.log(response); //success
+          console.log(response.token); //success
+          this.loginService.loginUser(response.token)
+          window.location.href="/home"
         },
 
         error=>{
-          console.log();
+          console.log(error);
         }
       
       )

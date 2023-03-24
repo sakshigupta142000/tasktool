@@ -15,6 +15,7 @@ import { ForgetPasswordComponent } from './components/forget-password/forget-pas
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {
@@ -23,7 +24,9 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'home', component:HomeComponent,
+    path: 'home',
+    canActivate:[AuthGuard],
+    component:HomeComponent,
     children:[
       {path: 'dashboard', component:DashboardComponent},
       {path: 'task', component:TaskComponent},   
