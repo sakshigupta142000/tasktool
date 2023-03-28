@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Signup</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> 
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="/src/styles.css"> -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   </head>
   <body>
@@ -16,27 +16,28 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="myLeftCtn">
-                    <form class="myForm text-center">
+                    <form class="myForm text-center" (ngSubmit)="submitTheForm()" method="post" >
                         <header> Create new account</header>
                     <div class="form-group">
                         <i class="bi bi-person-fill"></i>
-                        <input class="myInput" type="text" placeholder="Username" id="username" required>
-                        <!-- <div class="invalid-feedback">Please fill out tis field</div> -->
+                        <input class="myInput" type="text" placeholder="Username" id="username" name="username" [(ngModel)]="data.username" required>
+          
                     </div> 
                     <div class="form-group">
                         <i class="bi bi-envelope-at-fill"></i>
-                        <input class="myInput" type="text" placeholder="Email" id="email" required>
+                        <input class="myInput" type="text" placeholder="Email" id="email"  name="email" [(ngModel)]="data.email" required>
                     </div>
 
                     <div class="form-group">
                         <i class="bi bi-key-fill"></i>
-                        <input class="myInput" type="text" placeholder="Password" id="password" required>
+                        <input class="myInput" type="text" placeholder="Password" id="password" name="password" [(ngModel)]="data.password" required>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <i class="bi bi-key-fill"></i>
                         <input class="myInput" type="text" placeholder="ConfirmPassword" id="password" required>
-                    </div>
+                    </div> -->
 
+                    <!-- {{data | json}} -->
                     <div class="form-group">
                         <label>
                             <input id="check_1" nam="check_1" type="checkbox" required><small> I read and agree to Terms & conditions<br>
@@ -45,12 +46,8 @@
                         <div class="invalid-feedback">You must check the box</div>
                         </label>
                     </div>
-                    <!-- <div class="cont">
-                        <a routerLink = "/" id="login-button" button mat-raised-button color="primary">Submit</a>
-                        <a routerLink = "/" mat-raised-button color="primary">Cancel</a>
-                      </div> -->
-                    <input type="submit" class="butt" value="CREATE ACCOUNT">
-                    <!-- <a routerLink = "/" id="login-button" input type="submit" class="butt" value="CREATE ACCOUNT">CREATE ACCOUNT</a> -->
+                    <!-- <input type="submit" class="butt" value="CREATE ACCOUNT"> -->
+                    <button  type="submit" class="butt" mat-raised-button color="primary"  id="login-button">Create Account</button>
                 </form>
                 </div>
             </div>
@@ -74,49 +71,3 @@
 </html> 
 
 
-
-<!-- <mat-toolbar color="primary"> 
-    <span>Task Management Tool</span>  -->
-    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-    </button> -->
-<!-- </mat-toolbar>
-<!DOCTYPE html>
-<html lang="en">
-<head> -->
-  <!-- <link rel="stylesheet" href="loginpage.css"> -->
-  <!-- <title>Registration</title>
-</head>
-<body>
-  <form action="">
-      <div class="container">
-          <h3><B>SIGN UP</B></h3>
-      </div>
-      <div class="container">
-          <label for="name">Name: </label>
-          <input type="text" placeholder="Enter your name" name="Name" required>
-          <br>
-      </div>
-      <div class="container">
-        <label for="email">Email: </label>
-        <input type="text" placeholder="Enter your mail" name="Email" required>
-        <br>
-    </div>
-    <div class="container">
-        <label for="Password">Password: </label>
-        <input type="password" placeholder="Enter your Password" name="Password" required>
-        <br>
-    </div> 
-    <div class="container">
-        <label for="Password">Confirm Password: </label>
-        <input type="password" placeholder="Enter your Password" name="Password" required>
-        <br>
-    </div>
-  </form>
-  <div class="container">
-    <a routerLink = "/" id="login-button" button mat-raised-button color="primary">Submit</a>
-    <a routerLink = "/" mat-raised-button color="primary">Cancel</a>
-  </div>
-
-</body>
-</html>
- -->
