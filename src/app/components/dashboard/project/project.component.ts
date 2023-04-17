@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./project.component.css']
 })
 export class ProjectComponent {
-  displayedColumns = ['position','projectname','taskstatus','Assigned_To'];
+  displayedColumns = ['position','projectname','projectstatus'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   applyFilter(event: Event) {
@@ -20,12 +20,11 @@ export class ProjectComponent {
 export interface PeriodicElement {
   position: number;
   projectname:string;
-  taskstatus:string;
-  Assigned_To: string;
+  projectstatus:string;
 
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, projectname: 'Bio merchandise', taskstatus:'Active', Assigned_To:'Sakshi' },
-  {position: 2,  projectname: 'Task Management Tool', taskstatus:'Active', Assigned_To: 'Akarsh'},
+  {position: 1, projectname: 'Bio merchandise', projectstatus:'Active'},
+  {position: 2,  projectname: 'Task Management Tool', projectstatus:'Active'},
 ];
