@@ -17,52 +17,46 @@
     </div>
     <div class="col-md-6">
         <label for="inputproject" class="form-label">Project</label>
-        <input type="text" class="form-control" id="inputproject"  placeholder="Project name">
+        <select id="inputproject" class="form-select" name="project" [(ngModel)]=" projectId">
+          <option value="">Select</option>
+        <option  *ngFor="let item of projects" [value]="item.id">{{item.projectName}}</option>
+        </select>
     </div>
     <div class="col-12">
       <label for="inputdescription" class="form-label">Description</label>
       <input type="text" class="form-control" id="inputdescription" placeholder="Task Description">
     </div>
     <div class="col-md-6">
-      <label for="inputtaskcategory" class="form-label">Task Category</label>
-      <select id="inputtaskcategory" class="form-select">
-        <option selected>Developer</option>
-        <option>Tester</option>
-        <option>Analyst</option>
+      <label for="" class="form-label">Task Category</label>
+      <select id="inputtaskcategory"   name="taskcategory" class="form-select" [(ngModel)]="taskCategoryId">
+        <option value="">Select</option>
+        <option  *ngFor="let item of categories" [value]="item.id">{{item.taskCategory}}</option>
       </select>
   </div>
-    <div class="col-md-6">
-        <label for="inputsdate" class="form-label">Start date</label>
+    <!-- <div class="col-md-6">
+        <label for="inputsdate" class="form-label">Created On</label>
         <input type="date" class="form-control" id="inputsdate">
-      </div>
+      </div> -->
 
       <div class="col-md-6">
         <label for="inputddate" class="form-label">Due date</label>
         <input type="date" class="form-control" id="inputddate">
       </div>
-
-  
-    
     <div class="col-md-6">
         <label for="inputassignedto" class="form-label">Assigned to</label>
-        <select id="inputassignedto" class="form-select">
-          <option selected>Sakshi</option>
-          <option>Akarsh</option>
-          <option>Lalu</option>
+        <select id="inputassignedto" class="form-select" name="taskstatus" [(ngModel)]="assignedToId">
+          <option value="">Select</option>
+        <option  *ngFor="let item of allusers" [value]="item.id">{{item.username}}</option>
         </select>
     </div>
     <div class="col-md-4">
       <label for="inputStatus" class="form-label">Status</label>
-      <select id="inputStatus" class="form-select">
-        <option selected>Active</option>
-        <option>Closed</option>
-        <option>On hold</option>
+      <select id="inputStatus" class="form-select" name="taskstatus" [(ngModel)]="statusId">
+        <option value="">Select</option>
+        <option  *ngFor="let item of allstatus" [value]="item.id">{{item.taskStatus}}</option>
       </select>
     </div>
-    <!-- <div class="col-md-2">
-      <label for="inputZip" class="form-label">sakshi</label>
-      <input type="text" class="form-control" id="inputZip">
-    </div> -->
+
    
     <div class="col-12">
       <button type="submit" class="btn btn-primary" id="submitbutton" routerLink="/home/task">Submit</button>

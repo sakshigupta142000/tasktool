@@ -13,19 +13,19 @@
         <mat-table #table [dataSource]="dataSource">
       
           <!-- Position Column -->
-          <ng-container matColumnDef="position">
+          <ng-container matColumnDef="id">
             <mat-header-cell *matHeaderCellDef>ProjectId</mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+            <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
           </ng-container>
       
-          <ng-container matColumnDef="projectname">
+          <ng-container matColumnDef="projectName">
             <mat-header-cell *matHeaderCellDef>Project Name</mat-header-cell>
-            <mat-cell *matCellDef="let element" routerLink="/home/edit-project" style="cursor: pointer; color: rgb(160, 115, 202);"> {{element.projectname}} </mat-cell>
+            <mat-cell *matCellDef="let element" routerLink="/home/edit-project" style="cursor: pointer; color: rgb(160, 115, 202);"> {{element.projectName}} </mat-cell>
           </ng-container>
 
-          <ng-container matColumnDef="projectstatus">
+          <ng-container matColumnDef="isActive">
             <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.projectstatus}} </mat-cell>
+            <mat-cell *matCellDef="let element"> {{element.isActive}} </mat-cell>
           </ng-container>
     
   

@@ -10,29 +10,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   </head>
   <body>
-<form class="row g-3">
+<form class="row g-3" (ngSubmit)="submitTheForm()">
     <div class="col-md-6">
-        <label for="inputproject" class="form-label">Project</label>
-        <input type="text" class="form-control" id="inputproject"  placeholder="Project name">
+        <label for="name" class="form-label">Project</label>
+        <input [(ngModel)]="data.projectName" type="text" class="form-control" name="title"  placeholder="Project name">
     </div>
-    <!-- <div class="col-md-6">
-        <label for="inputassignedto" class="form-label">Assigned to</label>
-        <select id="inputassignedto" class="form-select">
-          <option selected>Sakshi</option>
-          <option>Akarsh</option>
-          <option>Lalu</option>
-        </select>
-    </div> -->
     <div class="col-md-4">
       <label for="inputStatus" class="form-label">Status</label>
-      <select id="inputStatus" class="form-select">
-        <option selected>Active</option>
-        <option>Closed</option>
-        <option>On hold</option>
+      <select  name="format" id="format" 	[(ngModel)]="data.isActive" class="form-select">
+        <option [ngValue]="true">Active</option>
+        <option  [ngValue]="false">Closed</option>
       </select>
     </div>
     <div class="col-12">
-      <button type="submit" class="btn btn-primary" id="submitbutton" routerLink="/home/project">Submit</button>
+      <button type="submit" class="btn btn-primary" id="submitbutton">Submit</button>
     </div>
   </form>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
