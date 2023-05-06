@@ -15,16 +15,18 @@ export class LoginService {
     return this.http.post(`${this.url}/token`,credentials)
   }
 
-  // public getCurrentUser(){
-  //   // var headers=new HttpHeaders();
-  //   // const header = {Authorization: `Bearer ${localStorage.getItem('token')}` }
-  //   // headers.append("Authorization","Bearer "+localStorage.getItem('token'));
+  public getCurrentUser(){
+
+    return JSON.parse(localStorage.getItem('user') || '{}');
+    // var headers=new HttpHeaders();
+    // const header = {Authorization: `Bearer ${localStorage.getItem('token')}` }
+    // headers.append("Authorization","Bearer "+localStorage.getItem('token'));
   //   var header = new HttpHeaders({ 
   //     'Content-Type': 'application/json',
   //     'Authorization': 'Bearer ' + localStorage.getItem('token')
   //  });
-  //   return this.http.get(`${this.url}/getcurrentuser`,{headers: header});
-  // }
+
+  }
 
   //for login user
   loginUser(token: string)

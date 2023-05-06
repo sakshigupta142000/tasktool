@@ -7,20 +7,26 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit{
-  user=null;
+  user={"username":null,"email":null};
   constructor(private loginService : LoginService){}
   
   ngOnInit(): void{
 
-  //   console.log("---------hey----");
-  //   this.loginService.getCurrentUser().subscribe(
-  //     (user:any) => {
-  //       this.user=user;
-  //     },
-  //     (error) => {
-  //       alert('error');
-  //     }
-  //   );
+    console.log("---------hey----");
+    this.user=this.loginService.getUser();
+    console.log(this.user);
+    console.log("----welcome---");
+
+
+    // .subscribe(
+    //   (user:any)=>{
+    //     this.user=user;
+    //   },
+    //   (error:any) =>{
+    //     console.log(error);
+    
+    //   }
+    // );
   //   // this.user=this.loginService.getUser();
   //   console.log(this.user);
   //   console.log("----welcome---");

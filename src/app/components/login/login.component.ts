@@ -9,7 +9,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class LoginComponent implements OnInit {
 
   credentials={
-    username:'',
+    email:'',
     password:''
   }
 
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   onSubmit()
   {
     console.log("form is submitted");
-    if((this.credentials.username!='' && this.credentials.password!='') && (this.credentials.username!=null && this.credentials.password!=null)){
+    if((this.credentials.email!='' && this.credentials.password!='') && (this.credentials.email!=null && this.credentials.password!=null)){
 
       console.log("We have to submit the form to server");
       this.loginService.generateToken(this.credentials).subscribe(
@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
 
           console.log(response.token); //success
           this.loginService.loginUser(response.token)
+          this.loginService.setUser(response.user)
           window.location.href="/home"
         },
 

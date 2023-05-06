@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AddtaskService } from 'src/app/services/addtask.service';
 
 @Component({
   selector: 'app-add-task',
@@ -7,22 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-task.component.css']
 })
 export class AddTaskComponent implements OnInit {
-
-  projectId: string = '';
-  title:  string = '';
-  description:  string = '';
-  dueDate: string = '';
-  statusId:  string = '';
-  assignedToId:  string = '';
-  createdById:  string = '';
-  createdOn:  string = '';
-  taskCategoryId:  string = '';
+  data={
+  projectId:"",
+  title:"",
+  description:"",
+  dueDate:"",
+  statusId:"",
+  assignedToId:"",
+  createdById:"",
+  createdOn:"",
+  taskCategoryId:""
+  }
   categories:any []=[];
   allstatus:any []=[];
   allusers:any []=[];
   projects:any []=[];
-  constructor(private http: HttpClient){
-
+  constructor(private http: HttpClient, private addtask:AddtaskService){
+    // private addtask:AddTaskComponent
 
   }
   ngOnInit(){
@@ -61,5 +63,22 @@ export class AddTaskComponent implements OnInit {
         console.log(this.projects);
       })
     }
+
+     submitTheForm(){
+    console.log("Task Submitted");
+    this.data.createdById=JSON.parse(localStorage.getItem('user') || '{}').id;
+    console.log(this.data);
+    this.addtask.sendData(this.data).subscribe(
+      response => {
+        console.log(response);
+        alert("Task Added Successfully !!");
+      },
+      error => {
+        console.log(error.error.message);
+        alert(error.error.message);
+      }
+    )
+  }
+
 
 }
