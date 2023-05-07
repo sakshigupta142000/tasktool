@@ -12,11 +12,16 @@
       <hr>
   
       <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="User Email" name="email" required>
-
+      <p>{{user.email}}</p>
+      <br>
+      <!-- <input type="text" placeholder="User Email" name="email" required>{{user.email}} -->
+      <label for="profile"><b>Profile</b></label>
+      <p>{{user.profile}}</p>
+      <br>
       <label for="email"><b>Username</b></label>
-      <input type="text" placeholder="Username" name="email" required>
-  
+      <p>{{user.username}}</p>
+      <!-- <input type="text" placeholder="Username" name="email" required>{{user.username}} -->
+      <!-- <P>{{user | json}}</P>  -->
       <div class="clearfix">
         <!-- <button type="submit" class="signupbtn">Change password</button> -->
         <a routerLink = "/home/changepassword" id="changepassword-button" button mat-raised-button color="primary">Change Password</a>
