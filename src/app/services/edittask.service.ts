@@ -16,7 +16,12 @@ export class EdittaskService {
     return this.http.get(`${this.url}/task/${id}`)
   }
 
-  postComment(id : String , data:any){
-    return this.http.post(`${this.url}/comment/task/${id}`,data)
+  postComment(data:any){
+    return this.http.post(`${this.url}/comment`,data)
   }
+
+  getCommentsByTaskId(id:String){
+    return this.http.get(`${this.url}/comment/task/${id}`)
+  }
+
 }

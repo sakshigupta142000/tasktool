@@ -3,6 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EdittaskService } from 'src/app/services/edittask.service';
 
+
+export interface ElementComments {
+      id:"",
+      comments:"",
+      createdOn:"",
+      commentedBy:{id:"",username:""},
+}
+
 @Component({
   selector: 'app-edit-task',
   templateUrl: './edit-task.component.html',
@@ -26,20 +34,17 @@ export class EditTaskComponent implements OnInit {
     allusers:any []=[];
     projects:any []=[];
 
-    comments={
-      id:"",
+    commentedUsers:ElementComments[]=[];
+    commentData={
       comments:"",
-      createdOn:"",
       commentedById:"",
-      task:""
+      taskId:""
     }
-    commentedUsers:any[]=[];
     constructor(private http: HttpClient, private edittask:EdittaskService, private router : ActivatedRoute){
   
     }
     ngOnInit() :void {
       this.loadCategory();
-      // this.loadComments();
       // this.getCommentsByTaskId();
       this.loadStatus();
       this.loadAllUser();
@@ -57,15 +62,10 @@ export class EditTaskComponent implements OnInit {
         self.data.dueDate=result.dueDate;
         console.log(result)
       });
+      this.edittask.getCommentsByTaskId(this.router.snapshot.params['id']).subscribe((result:any)=>{
+        self.commentedUsers=result;
+      });
     }
-    // loadComments(){
-    //   this.http.get('http://localhost:8082/comment').subscribe((result:any)=> {
-    //       this.commentedUsers = result;
-    //       console.log(this.commentedUsers);
-    //     })
-    // }
-    // getCommentsByTaskId(){}
-
       loadCategory(){
         this.http.get('http://localhost:8082/taskcategory').subscribe((result:any)=> {
           this.categories = result;
@@ -110,19 +110,26 @@ export class EditTaskComponent implements OnInit {
           alert(error.error.message);
         }
       )
-      // console.log("comment added");
+    }
+    submitCommentForm(){
+      console.log("comment added");
       // this.comments.commentedById=JSON.parse(localStorage.getItem('user') || '{}').id;
-      // console.log(this.comments);
-      // this.edittask.postComment(this.id,this.comments).subscribe(
-      //   response => {
-      //     console.log(response);
-      //     alert("Task Added Successfully !!");
-      //   },
-      //   error => {
-      //     console.log(error.error.message);
-      //     alert(error.error.message);
-      //   }
-      // )
+      console.log(this.commentData);
+      this.commentData.commentedById=JSON.parse(localStorage.getItem('user') || '{}').id;
+      this.commentData.taskId=this.router.snapshot.params['id'];
+      let self=this;
+      this.edittask.postComment(this.commentData).subscribe(
+        response => {
+          console.log(response);
+          let comment = <ElementComments> response;
+          self.commentedUsers.unshift(comment);
+          self.commentData.comments = "";
+        },
+        error => {
+          console.log(error.error.message);
+          alert(error.error.message);
+        }
+      )
     }
 
 }
