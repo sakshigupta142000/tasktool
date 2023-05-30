@@ -34,7 +34,7 @@ const routes: Routes = [
       {path: 'setting', component:SettingComponent},
       {path:'changepassword', component:ChangePasswordComponent},
       {path:'add-task', component:AddTaskComponent},
-      {path:'edit-task', component:EditTaskComponent},
+      {path:'edit-task/:id', component:EditTaskComponent},
       {path:'edit-project', component:EditProjectComponent},
       {path:'add-project',component:AddProjectComponent},
       {path:'add-taskcategory', component:AddTaskcategoryComponent},
