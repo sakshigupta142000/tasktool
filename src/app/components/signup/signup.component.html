@@ -33,6 +33,7 @@
                         <i class="bi bi-key-fill"></i>
                         <input class="myInput" type="password" placeholder="Password" id="password" name="password" [(ngModel)]="data.password" required>
                     </div>
+                    <br>
                     <!-- <div class="form-group">
                         <i class="bi bi-key-fill"></i>
                         <input class="myInput" type="text" placeholder="ConfirmPassword" id="password" required>
@@ -42,17 +43,16 @@
                     <div class="form-group">
                         <label>
                             <input id="check_1" nam="check_1" type="checkbox" required><small> I read and agree to Terms & conditions<br>
+                                <p class="register">Already have an account?<U><a routerLink = "/" > SignIn</a></U></p>
                         </small>
                         <br>
                         <div class="invalid-feedback">You must check the box</div>
                         </label>
                     </div>
-                    <!-- <input type="submit" class="butt" value="CREATE ACCOUNT"> -->
-                    <button  type="submit" class="butt" mat-raised-button color="primary"  id="login-button">Create Account</button>
+                    <button  type="submit" class="butt" mat-raised-button color="primary"  id="signup-button">Create Account</button>
                 </form>
                 </div>
             </div>
-             
             <div class="col-md-6">
                 <div class="myRightCtn">
                     <div class="box">

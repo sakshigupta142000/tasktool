@@ -1,5 +1,6 @@
 import { Component , OnInit} from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +21,13 @@ export class HomeComponent implements OnInit{
   {
     this.loginService.logout()
     location.reload()
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Successfully logged Out',
+      showConfirmButton: false,
+      timer: 200000
+    });
   }
 
 }

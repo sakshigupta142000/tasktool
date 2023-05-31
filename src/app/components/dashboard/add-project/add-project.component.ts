@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AddprojectService } from 'src/app/services/addproject.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-project',
@@ -24,11 +25,13 @@ export class AddProjectComponent {
     this.addproject.sendData(this.data).subscribe(
       response => {
         console.log(response);
-        alert("Project Added Successfully !!");
+        Swal.fire('Good job!','Project ' + this.data.projectName+ '  is successfully added','success').then(()=>
+        window.location.href="/home/project"
+        );
       },
       error => {
         console.log(error.error.message);
-        alert(error.error.message);
+        Swal.fire('Warning','Please fill the correct details','warning');
       }
     )
   }

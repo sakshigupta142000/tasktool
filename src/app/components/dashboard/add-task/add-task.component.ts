@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AddtaskService } from 'src/app/services/addtask.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-task',
@@ -71,11 +72,14 @@ export class AddTaskComponent implements OnInit {
     this.addtask.sendData(this.data).subscribe(
       response => {
         console.log(response);
-        alert("Task Added Successfully !!");
+        // alert("Task Added Successfully !!");
+        Swal.fire('Success','Task ' + this.data.title+ '  is successfully assigned','success').then(()=>
+          window.location.href="/home/task"
+          );
       },
       error => {
         console.log(error.error.message);
-        alert(error.error.message);
+        Swal.fire('Warning','Please fill the correct details','warning');
       }
     )
   }

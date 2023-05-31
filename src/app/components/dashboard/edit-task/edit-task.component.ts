@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EdittaskService } from 'src/app/services/edittask.service';
+import Swal from 'sweetalert2';
 
 
 export interface ElementComments {
@@ -103,11 +104,14 @@ export class EditTaskComponent implements OnInit {
       this.edittask.sendData(this.router.snapshot.params['id'],this.data).subscribe(
         response => {
           console.log(response);
-          alert("Task edited Successfully !!");
+          Swal.fire('Success','Task ' + this.data.title+ '  details are successfully updated','success').then(()=>
+          window.location.href="/home/task"
+          );
         },
         error => {
           console.log(error.error.message);
           alert(error.error.message);
+          Swal.fire('Warning','Wrong details','warning');
         }
       )
     }
@@ -124,10 +128,12 @@ export class EditTaskComponent implements OnInit {
           let comment = <ElementComments> response;
           self.commentedUsers.unshift(comment);
           self.commentData.comments = "";
+          // Swal.fire('Comment added'+ self.commentData.comments);
         },
         error => {
           console.log(error.error.message);
           alert(error.error.message);
+          Swal.fire('Warning','Wrong details','warning');
         }
       )
     }

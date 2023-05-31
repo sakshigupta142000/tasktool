@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'login',
@@ -31,17 +32,21 @@ export class LoginComponent implements OnInit {
           console.log(response.token); //success
           this.loginService.loginUser(response.token)
           this.loginService.setUser(response.user)
+          Swal.fire('Good job!!','You have successfully logged In','success').then(()=>
           window.location.href="/home"
+          );
         },
 
         error=>{
           console.log(error);
+          Swal.fire('Warning','Wrong Credentials','warning');
         }
       
       )
 
     }else{
       console.log("Fields are empty !!")
+      Swal.fire('Oops!!','Please fill the mandatory details','warning');
     }
   }
 
