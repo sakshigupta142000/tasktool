@@ -79,7 +79,12 @@ export class AddTaskComponent implements OnInit {
       },
       error => {
         console.log(error.error.message);
-        Swal.fire('Warning','Please fill the correct details','warning');
+        if (error.error.message){
+          Swal.fire('Error',error.error.message,'error');
+        }
+        else{
+          Swal.fire('Warning','Please fill the correct details','warning');
+        }
       }
     )
   }

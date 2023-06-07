@@ -13,14 +13,14 @@
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"> -->
   </head>
   <body>
-<form class="row g-3">
+<form class="row g-3" (ngSubmit)="submitProjectForm()">
     <!-- <div class="col-md-6">
       <label for="inputtitle" class="form-label">Title</label>
       <input type="text" class="form-control" id="inputtitle"  placeholder="Title of task">
     </div> -->
     <div class="col-md-6">
         <label for="inputproject" class="form-label">Project</label>
-        <input type="text" class="form-control" id="inputproject"  placeholder="Project name">
+        <input type="text" class="form-control" id="inputproject"  placeholder="Project name" name="projectName"   [(ngModel)]="projectdata.projectName">
     </div>
     
     <!-- <div class="col-md-6">
@@ -33,14 +33,13 @@
     </div> -->
     <div class="col-md-4">
       <label for="inputStatus" class="form-label">Status</label>
-      <select id="inputStatus" class="form-select">
-        <option selected>Active</option>
-        <option>Closed</option>
-        <option>On hold</option>
+      <select id="inputStatus" type="status" class="form-select" name="status" [(ngModel)]="projectdata.isActive">
+        <option value="true">Active</option>
+        <option value="false">Closed</option>
       </select>
     </div>   
     <div class="col-12">
-      <button type="submit" class="btn btn-primary" id="submitbutton" routerLink="/home/project">Submit</button>
+      <button type="submit" class="btn btn-primary" id="submitbutton">Update</button>
     </div>
   </form>
   </body>

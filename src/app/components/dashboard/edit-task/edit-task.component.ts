@@ -61,7 +61,7 @@ export class EditTaskComponent implements OnInit {
         self.data.createdById=result.createdBy.id;
         self.data.taskCategoryId=result.category.id;
         self.data.dueDate=result.dueDate;
-        console.log(result)
+        console.log(result);
       });
       this.edittask.getCommentsByTaskId(this.router.snapshot.params['id']).subscribe((result:any)=>{
         self.commentedUsers=result;
@@ -110,8 +110,7 @@ export class EditTaskComponent implements OnInit {
         },
         error => {
           console.log(error.error.message);
-          alert(error.error.message);
-          Swal.fire('Warning','Wrong details','warning');
+          Swal.fire('Error',error.error.message,'error');
         }
       )
     }

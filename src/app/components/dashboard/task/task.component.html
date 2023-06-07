@@ -1,15 +1,19 @@
 <div class="one">
   <div class="containers">
       <h1 style="text-align: center; font-family: Raleway, sans-serif;"> TASK DETAILS </h1> <br> </div>
+      
       <div class="first">
-          <button mat-raised-button color="primary" routerLink="/home/add-task">Add New Task</button>
+          <button mat-raised-button color="primary" id="newtaskbutton" routerLink="/home/add-task">Add New Task</button>
       <div class="example-header">
   
-        <mat-form-field style="text-align: left; padding-left: 80%; height: 1%;">
-          <input matInput (keyup)="applyFilter($event)"  placeholder="Filter" >
+        <mat-form-field id="searchinput" style="text-align: left; padding-left: 87%; height: 1%; ">
+          <input matInput (keyup)="applyFilter($event)" placeholder="Search" >
         </mat-form-field>
-     
-        
+        <!-- <mat-form-field  appearance="fill">
+          <mat-label>Search</mat-label>
+          <input matInput placeholder="Search" (input)="applyFilter($event)">
+        </mat-form-field>
+         -->
       <mat-table #table [dataSource]="dataSource">
     
         <!-- Position Column -->

@@ -5,8 +5,8 @@
             <button mat-raised-button color="primary" routerLink="/home/add-project">Create New Project</button>
         <div class="example-header">
     
-          <mat-form-field style="text-align: left; padding-left: 80%; height: 1%;">
-            <input matInput (keyup)="applyFilter($event)"  placeholder="Filter" >
+          <mat-form-field style="text-align: left; padding-left: 87%; height: 1%;">
+            <input matInput (keyup)="applyFilter($event)"  placeholder="Search" >
           </mat-form-field>
        
           
@@ -20,12 +20,14 @@
       
           <ng-container matColumnDef="projectName">
             <mat-header-cell *matHeaderCellDef>Project Name</mat-header-cell>
-            <mat-cell *matCellDef="let element" routerLink="/home/edit-project" style="cursor: pointer; color: rgb(160, 115, 202);"> {{element.projectName}} </mat-cell>
+            <mat-cell *matCellDef="let element" routerLink="/home/edit-project/{{element.id}}" style="cursor: pointer; color: rgb(160, 115, 202);"> {{element.projectName}} </mat-cell>
           </ng-container>
 
           <ng-container matColumnDef="isActive">
             <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.isActive}} </mat-cell>
+            <mat-cell *matCellDef="let element"> 
+              {{element.isActive ? 'Active' : 'Closed'}}
+            </mat-cell>
           </ng-container>
     
   
