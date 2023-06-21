@@ -5,13 +5,16 @@
 }
 .example-container {
     display: flex;
+    margin-top:-4.5%;
     flex-direction: column;
     min-width: 300px;
     
   }
   .example-header {
-    min-height: 64px;
-    padding: 8px 24px 0;
+    min-height: 6px;
+    padding: 4px 20px 0;
+    margin-top:-1%;
+    
   }
   
   .mat-form-field {
@@ -25,12 +28,37 @@
 
   }
 .first button{
-    margin-left: 86%;
-    width: 13%;
+    margin-left: 30%;
+    width: 136%;
     background-color: #894cac;
-    font-family:  Raleway, sans-serif;;
+    font-family:  Raleway, sans-serif;
 }
 /* #filtyerkey{
   width: 190%;
   margin-left: 79%;
 } */
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+
+}
+.col-3 {width: 10%;}
+.col-9 {width: 80%;}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: rgb(94, 89, 89);
+  float: left;
+  padding: 75px 10px;
+  text-decoration: none;
+}

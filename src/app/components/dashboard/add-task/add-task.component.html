@@ -10,19 +10,21 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   </head>
   <body>
-<form class="row g-3" (ngSubmit)="submitTheForm()">
+<form class="row" (ngSubmit)="submitTheForm()">
     <div class="col-md-6">
+      <br>
       <label for="inputtitle" class="form-label">Title</label>
       <input type="text" class="form-control" id="inputtitle" name="title" placeholder="Title of task" [(ngModel)]="data.title">
     </div>
     <div class="col-md-6">
+      <br>
         <label for="inputproject" class="form-label">Project</label>
         <select id="inputproject" class="form-select" name="project" [(ngModel)]="data.projectId">
           <option value="">Select</option>
         <option  *ngFor="let item of projects" [value]="item.id">{{item.projectName}}</option>
         </select>
     </div>
-    <div class="col-12">
+    <div class="col-md-6">
       <label for="inputdescription" class="form-label">Description</label>
       <input type="text" class="form-control" id="inputdescription" placeholder="Task Description" name="description" [(ngModel)]="data.description">
     </div>
@@ -55,11 +57,13 @@
         <option value="">Select</option>
         <option  *ngFor="let item of allstatus" [value]="item.id">{{item.taskStatus}}</option>
       </select>
+      <br>
+      <br>
     </div>
-
    
     <div class="col-12">
       <button type="submit" class="btn btn-primary" id="submitbutton">Submit</button>
+      <br>
       
     </div>
   </form>

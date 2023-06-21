@@ -8,13 +8,17 @@ import Swal from 'sweetalert2';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
-  
+  user={"username":null,"email":null};
   public loggedIn=false; 
 
   constructor(private loginService:LoginService){}
 
   ngOnInit(): void {
     this.loggedIn=this.loginService.isLoggedIn()
+    this.user=this.loginService.getUser();
+    console.log(this.user);
+    console.log("----welcome---");
+
     
   }
   logoutUser()

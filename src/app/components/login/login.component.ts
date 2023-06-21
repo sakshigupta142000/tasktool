@@ -32,21 +32,25 @@ export class LoginComponent implements OnInit {
           console.log(response.token); //success
           this.loginService.loginUser(response.token)
           this.loginService.setUser(response.user)
-          Swal.fire('Good job!!','You have successfully logged In','success').then(()=>
-          window.location.href="/home"
-          );
+          console.log(response);
+          window.location.href="/home/task"
+          // Swal.fire('Good job!!','You have successfully logged In','success').then(()=>
+          // window.location.href="/home"
+          // );
         },
 
         error=>{
-          console.log(error);
-          Swal.fire('Warning','Wrong Credentials','warning');
+          console.log(error.error.message);
+          if (error.error.message){
+            Swal.fire('Error',error.error.message,'error');
+          }
+          else{
+            Swal.fire('Warning','Please fill the correct details','warning');
+          }
         }
       
       )
 
-    }else{
-      console.log("Fields are empty !!")
-      Swal.fire('Oops!!','Please fill the mandatory details','warning');
     }
   }
 

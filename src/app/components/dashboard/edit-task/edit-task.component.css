@@ -1,7 +1,6 @@
 form{
-    background-color: rgb(225, 199, 244);
-    margin-top:2%;
-    padding-right:5%;
+    background-color:whitesmoke;
+  
 }
 .example-form-field {
     margin-right: 20px;
@@ -15,19 +14,37 @@ form{
     margin-top:1.5%;
 }
 
-body{background:  rgb(225, 199, 244)}.date{font-size: 11px}.comment-text{font-size: 12px}.fs-12{font-size: 12px}.shadow-none{box-shadow: none}.name{color: #8d13e4}.cursor:hover{color: blue}.cursor{cursor: pointer}.textarea{resize: none}
+body{background:  whitesmoke}.date{font-size: 11px}
+.comment-text{font-size: 12px}.fs-12{font-size: 12px}.shadow-none{box-shadow: none}
+.name{color: #8d13e4}.cursor:hover{color: blue}.cursor{cursor: pointer}.textarea{resize: none}
+
 #comment-button{
     margin-right: 15px;
-    background: #e54ff2;
+    margin-top:-2%;
+    background: #894cac;
     color: #fff;
 }
 #cancel-button{
     margin-right: 15px;
-    background: #e54ff2;
+    margin-top:-2%;
+    background:#894cac;
     color: #fff;
 }
 
 .flex-column{
     flex-direction: column!important;
 }
+.classcommentbox{
+    margin-left:-23%;
 
+}
+.pagination {
+    display: inline-block;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }

@@ -5,12 +5,14 @@
 } */
 #login-button{
     margin-right: 15px;
-    background: #e54ff2;
+    background: #9558b4;
+    font-family:'Inter',sans-serif;
     color: #fff;
 }
 #signup-button{
     margin-right: 15px;
-    background: #e54ff2;
+    background:#9558b4;
+    font-family:'Inter',sans-serif;
     color: #fff;
 }
 .mat-toolbar.mat-primary {
@@ -23,7 +25,7 @@
     box-sizing:border-box;
 }
 body{
-    background-color: #fbf3ff;
+    background-color: transparent;
 }
 .container{
     position: absolute;
@@ -36,7 +38,7 @@ body{
 }
 .myRightCtn {
     position: relative;
-    background-image: linear-gradient(45deg,#f046ff,#9b00e8);
+    background-image: linear-gradient(45deg,#b9a0c5,#52007b);
     border-radius: 25px;
     height: 100%;
     padding: 25px;
@@ -55,7 +57,8 @@ body{
     padding-left: 50px;
 }
 .myLeftCtn header{
-    color:blueviolet;
+    color:#9558b4;
+    font-family:'Inter',sans-serif;
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -74,7 +77,7 @@ body{
     box-shadow: 0px 10px 40px -10px rgba(0,0,0,0.7);
 }
 .myRightCtn header {
-    color:#fff;
+    color:rgb(212, 188, 188);
     font-size: 44px;
 }
 .box{
@@ -83,11 +86,11 @@ body{
     margin-bottom: 100px;
 }
 .myLeftCtn .myInput {
-    width: 230px;
-    border-radius: 25px;
+    width: 284px;
+    border-radius: 20px;
     padding: 8px;
-    padding-left: 50px;
-    margin-bottom: 5px;
+    padding-left: 14px;
+    margin-bottom: 15px;
     border:none;
     -webkit-box-shadow: 0px 10px 40px -10px rgba(0,0,0,0.7);
     -moz-box-shadow: 0px 10px 40px -10px rgba(0,0,0,0.7);
@@ -119,15 +122,19 @@ body{
 }
 .myLeftCtn .bi{
     position: relative;
-    color:#bb36fd;
-    left:36px;
+    margin-top: auto;
+    color:#9558b4;
+    left:-2%;
+   
 }
 
 .butt_out{ 
     background: transparent;
     color: #fff;
-    width: 120px;
-    border:2px solid#fff;
+    width: 100px;
+    border:1px solid#fff;
+    margin-left: -1%;
+    text-align: center;
     border-radius: 25px;
     padding: 10px;
     -webkit-box-shadow: 0px 10px 40px -10px rgba(0,0,0,0.7);
@@ -140,3 +147,8 @@ body{
 .butt_out:focus{
     outline:none;
 } 
+.innercontainer {
+    position: relative;
+    text-align: center;
+    color: white;
+  }

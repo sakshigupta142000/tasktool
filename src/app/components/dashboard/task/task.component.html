@@ -1,19 +1,23 @@
 <div class="one">
-  <div class="containers">
-      <h1 style="text-align: center; font-family: Raleway, sans-serif;"> TASK DETAILS </h1> <br> </div>
-      
+  <div class="example-container">
+    <div class="row">
+      <div class="col-9">
+      <h1 style="text-align: center; font-family: Raleway, sans-serif;"> TASK DETAILS </h1> 
+      </div>
+      <div class="col-3">
       <div class="first">
           <button mat-raised-button color="primary" id="newtaskbutton" routerLink="/home/add-task">Add New Task</button>
+          </div>
+        </div>
+      </div>
       <div class="example-header">
   
         <mat-form-field id="searchinput" style="text-align: left; padding-left: 87%; height: 1%; ">
           <input matInput (keyup)="applyFilter($event)" placeholder="Search" >
         </mat-form-field>
-        <!-- <mat-form-field  appearance="fill">
-          <mat-label>Search</mat-label>
-          <input matInput placeholder="Search" (input)="applyFilter($event)">
-        </mat-form-field>
-         -->
+        </div>
+      
+      
       <mat-table #table [dataSource]="dataSource">
     
         <!-- Position Column -->
@@ -70,7 +74,16 @@
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
       </mat-table>
-    
     </div>
     
+    </div>
+    <div class="pagination">
+      <a href="#">&laquo;</a>
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">6</a>
+      <a href="#">&raquo;</a>
     </div>

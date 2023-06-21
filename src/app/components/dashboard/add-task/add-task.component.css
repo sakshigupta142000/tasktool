@@ -1,14 +1,17 @@
 form{
-    background-color: rgb(225, 199, 244);
-    margin-top:5%;
-    padding-right: 40px;
+    background-color: whitesmoke;
+    margin-top:-1%;
+    padding-right:2%;
+    margin-bottom: 2%;
 }
 .example-form-field {
     margin-right: 20px;
+    
   }
 
 #submitbutton{
     background-color:  #894cac;
+    margin-bottom: 30%;
 }
 /* #inputproject{
     margin-left: 50%;
@@ -16,3 +19,4 @@ form{
 .container {
     min-width: 2000px;
 }
+body{background:  rgb(225, 199, 244)}.date{font-size: 11px}.comment-text{font-size: 12px}.fs-12{font-size: 12px}.shadow-none{box-shadow: none}.name{color: #8d13e4}.cursor:hover{color: blue}.cursor{cursor: pointer}.textarea{resize: none}

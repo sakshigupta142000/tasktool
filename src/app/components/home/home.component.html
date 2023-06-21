@@ -1,4 +1,4 @@
-<mat-sidenav-container class="container">
+<mat-sidenav-container class="container classmaincontainer">
   <mat-sidenav #sidebar mode="side" opened>
     <app-sidebar></app-sidebar>
   </mat-sidenav>
@@ -10,7 +10,9 @@
           <div class="box">
             <!-- <mat-icon>search</mat-icon>
             <mat-icon>bookmark_border</mat-icon> --> 
-            <a *ngIf="loggedIn"  (click)="logoutUser()" mat-icon-button id="logout-button">Logout</a>
+            <span> Hi, {{user.username}}
+            <a *ngIf="loggedIn"  (click)="logoutUser()" mat-icon-button id="logout-button"><mat-icon>logout</mat-icon></a></span>
+            
             <!-- <mat-icon>mail_outline</mat-icon> -->
           </div>
         </mat-toolbar>

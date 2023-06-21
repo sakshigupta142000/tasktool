@@ -1,29 +1,42 @@
-mat-sidenav{
-    background-color: rgb(142, 52, 169);
-    width: 230px;
-    height:100%;
+mat-sidenav {
+    background-color: white;
+    width: 250px;
+    height: 100%;
 
 }
-mat-sidenav-content{
-    height: 100vh;
-    background-color: rgb(225, 199, 244);
+.classmaincontainer{
+    max-width: none !important;
 }
-.mat-sidenav-content  .main{
+mat-sidenav-content {
+    height: 100vh;
+    background-color: whitesmoke;
+}
+
+.mat-sidenav-content .main {
     margin-left: 30px;
 }
-.mat-toolbar .mat-icon{
+
+.mat-toolbar .mat-icon {
     margin-left: 15px;
-    color:gray;
+    color: #0000008f;
 }
-mat-toolbar{
+
+mat-toolbar {
     justify-content: space-between;
+    background-color: #894cac;
+    margin-bottom: 3%;
 }
-.mat-toolbar .box{
-    margin-top: 15px;
+
+.mat-toolbar .box {
+    margin-top: 1px;
 }
-#logout-button{
-    margin-right: 35px;
-    color: #8f1cd6;
+
+#logout-button {
+    margin-right: 5px;
+    color: #0000008f;
+
+    /* text-decoration:underline; */
+
 }
 
 
